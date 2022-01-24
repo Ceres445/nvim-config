@@ -1,3 +1,4 @@
+" Sourced from primeagen's dotfiles
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 
 
@@ -13,6 +14,10 @@ noremap <leader>vq :lua vim.diagnostic.setqflist({open = false})<CR>
 nnoremap <leader>va <cmd>TroubleToggle<cr>
 nnoremap <leader>vw <cmd>TroubleToggle workspace_diagnostics<cr>
 nnoremap <leader>vd <cmd>TroubleToggle document_diagnostics<cr>
+
+let g:LanguageClient_serverCommands = {
+            \ 'sql': ['sql-language-server', 'up', '--method', 'stdio'],
+            \ }
 
 let g:compe = {}
 let g:compe.enabled = v:true

@@ -1,3 +1,4 @@
+" ginit.vim for nvim-qt
 " Enable Mouse
 set mouse=a
 

@@ -1,3 +1,4 @@
+require("trouble").setup {}
 -- Setup nvim-cmp.
 local cmp = require'cmp'
 local source_mapping = {
@@ -174,12 +175,10 @@ lsp_installer.on_server_ready(function(server)
     server:setup(opts)
 end)
 
-vim.cmd [[nnoremap <silent>gca lua require'nvim-lightbulb'.update_lightbulb()<CR>]]
+-- unused lightbulb stuff
+-- vim.cmd [[nnoremap <silent>gca lua require'nvim-lightbulb'.update_lightbulb()<CR>]]
 
-vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
+-- vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
 
-require("trouble").setup {
-    mode= "quickfix"
-}
 
 
