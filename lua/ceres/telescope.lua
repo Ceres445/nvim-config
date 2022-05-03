@@ -2,13 +2,12 @@
 local actions = require("telescope.actions")
 local builtin = require("telescope.builtin")
 local telescope = require("telescope")
-require'neoclip'.setup()
+
 telescope.setup({
     defaults = {
         file_sorter = require("telescope.sorters").get_fzy_sorter,
         prompt_prefix = " >",
         color_devicons = true,
-
         file_previewer = require("telescope.previewers").vim_buffer_cat.new,
         grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
         qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
@@ -28,6 +27,7 @@ telescope.setup({
     },
 })
 
+require'neoclip'.setup()
 require("harpoon").setup({
     global_settings = {
         save_on_toggle = false,
@@ -40,9 +40,15 @@ require("git-worktree").setup({
     update_on_change =  true,
 })
 
+require('session-lens').setup {
+    path_display={'shorten'},
+}
+
 telescope.load_extension("git_worktree")
 telescope.load_extension('harpoon')
 telescope.load_extension("fzy_native")
+telescope.load_extension("session-lens")
+telescope.load_extension("file_browser")
 
 local M = {}
 M.search_dotfiles = function()

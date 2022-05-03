@@ -27,7 +27,7 @@ Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'christianchiarulli/nvcode-color-schemes.vim'
 
 
-" Git 
+" Git
 Plug 'ThePrimeagen/git-worktree.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'lewis6991/gitsigns.nvim'
@@ -48,6 +48,7 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'ThePrimeagen/harpoon'
+Plug 'nvim-telescope/telescope-file-browser.nvim'
 
 " VIM extras
 Plug 'ThePrimeagen/vim-apm'
@@ -57,13 +58,19 @@ Plug 'mbbill/undotree'
 Plug 'folke/trouble.nvim'
 Plug 'ThePrimeagen/vim-be-good'
 Plug 'folke/which-key.nvim'
-Plug 'tpope/vim-obsession'
+Plug 'rmagatti/auto-session',
+Plug 'rmagatti/session-lens'
+Plug 'tpope/vim-dadbod'
+Plug 'kristijanhusak/vim-carbon-now-sh'
+" Plug 'tpope/vim-obsession'
+" Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
 " syntax highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-refactor'
+Plug 'ellisonleao/glow.nvim', {'branch': 'main'}
 " Plug 'preservim/nerdtree'
-Plug 'kyazdani42/nvim-tree.lua'
+" Plug 'kyazdani42/nvim-tree.lua'
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'chrisbra/Colorizer'
 " Plug 'luochen1990/rainbow'
@@ -79,20 +86,24 @@ Plug 'windwp/nvim-autopairs'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 
-" LSP 
+" LSP
 Plug 'vim-python/python-syntax'
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer',
 
-" Auto complete
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/nvim-cmp'
-Plug 'onsails/lspkind-nvim'
-Plug 'L3MON4D3/LuaSnip'
-Plug 'saadparwaiz1/cmp_luasnip'
+" " Auto complete
+" Plug 'hrsh7th/cmp-nvim-lsp'
+" Plug 'hrsh7th/cmp-buffer'
+" Plug 'hrsh7th/cmp-path'
+" Plug 'hrsh7th/cmp-cmdline'
+" Plug 'hrsh7th/nvim-cmp'
+" Plug 'onsails/lspkind-nvim'
+" Plug 'L3MON4D3/LuaSnip'
+" Plug 'saadparwaiz1/cmp_luasnip'
+
+"testing coq
+Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 
 " dev icons
 Plug 'kyazdani42/nvim-web-devicons'
@@ -100,19 +111,19 @@ Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 lua require('ceres')
-" Load session
-fun! Startup()
-    if filereadable('Session.vim')
-        call inputsave()
-        let name = input("Found session file, load it? (y/n) ")
-        call inputrestore()
-        if name == 'y'
-            source Session.vim
-        endif
-    endif
-endfunction
+" " Load session
+" fun! Startup()
+"     if filereadable('Session.vim')
+"         call inputsave()
+"         let name = input("Found session file, load it? (y/n) ")
+"         call inputrestore()
+"         if name == 'y'
+"             source Session.vim
+"         endif
+"     endif
+" endfunction
 
-au VimEnter * call Startup()
+" au VimEnter * call Startup()
 
 
 " Edit vimr configuration file
@@ -145,8 +156,7 @@ set incsearch
 set scrolloff=8
 set signcolumn=yes
 set colorcolumn=120
-
-let g:python3_host_prog="/usr/local/bin/python3"
+set sessionoptions+=winpos,terminal
 
 " load lua syntax in vim
 let g:vimsyn_embed = 'lPr'

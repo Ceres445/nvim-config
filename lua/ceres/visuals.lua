@@ -76,20 +76,23 @@ vim.g.bufferline = {
     -- where X is the buffer number. But only a static string is accepted here.
     no_name_title = nil,
 }
-require'lualine'.setup()
-require'nvim-tree'.setup {
-    auto_close          = true,
-    open_on_tab         = false,
-    update_cwd = true,
-    update_focused_file = {
-        enable = false,
-        update_cwd = true
-    },
-    update_to_buf_dir   = {
-    enable = true,
-    auto_open = false,
-  },
+require('lualine').setup{
+    sections = {lualine_c = {require('auto-session-library').current_session_name, 'filename'}}
 }
+
+-- require'nvim-tree'.setup {
+--     auto_close          = true,
+--     open_on_tab         = false,
+--     update_cwd = true,
+--     update_focused_file = {
+--         enable = false,
+--         update_cwd = true
+--     },
+--     update_to_buf_dir   = {
+--         enable = true,
+--         auto_open = false,
+--     },
+-- }
 
 
 -- auto pair brackets

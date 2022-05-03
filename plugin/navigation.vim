@@ -20,7 +20,7 @@ nnoremap <leader>L :blast<CR>
 nnoremap <leader>H :bfirst<CR>
 nnoremap <silent> <S-h> :BufferPrevious<CR>
 nnoremap <silent> <S-l> :BufferNext<CR>
-nnoremap <C-x> :bd<CR>
+nnoremap <C-s> :bd<CR>
 nnoremap <leader>bd :bd<CR>
 
 " use E instead of ^ to move to start of line

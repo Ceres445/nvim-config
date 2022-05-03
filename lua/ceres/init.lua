@@ -4,8 +4,14 @@ require("ceres.telescope")
 require("ceres.treesitter")
 
 
-require('gitsigns').setup()
+-- require('gitsigns').setup()
 
+require('auto-session').setup {
+    log_level = 'info',
+    auto_session_suppress_dirs = {'~/'},
+    auto_save_enabled = true,
+    auto_restore_interval = true,
+}
 -- Use ctrl-t to toggle terminal
 require("toggleterm").setup{
     -- size can be a number or function which is passed the current terminal

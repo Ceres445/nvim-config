@@ -1,6 +1,7 @@
 " Copilot settings
 imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
 let g:copilot_no_tab_map = v:true
+imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
 
 " Black setup
 " nnoremap <leader>F :Black<CR>
@@ -28,7 +29,8 @@ let g:rainbow_active = 1
 
 " python syntax highlighting
 let g:python_highlight_all = 1
-
+let g:formatterpath = ['/usr/local/bin/black']
+let g:python3_host_prog="/usr/local/bin/python3"
 
 " configure nvcode-color-schemes
 let g:nvcode_termcolors=256
