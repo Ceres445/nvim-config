@@ -2,6 +2,8 @@ require("ceres.lsp")
 require("ceres.visuals")
 require("ceres.telescope")
 require("ceres.treesitter")
+require("ceres.go")
+
 
 
 -- require('gitsigns').setup()
@@ -47,3 +49,4 @@ require("toggleterm").setup{
 
 require('todo-comments').setup()
 require('which-key').setup()
+require( 'colorizer' ).setup()

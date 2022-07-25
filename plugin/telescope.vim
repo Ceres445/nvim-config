@@ -1,6 +1,6 @@
 " Telescope shortcuts
 nnoremap <leader>fF :lua require('telescope.builtin').find_files( {hidden=true, no_ignore=true})<CR>
-nnoremap <leader>ff :lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>ff :lua require('ceres.telescope').find_files()<cr>
 nnoremap <leader>fg :lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>bb :lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fs :lua require('session-lens').search_session()<cr>

@@ -31,45 +31,45 @@ noremap ge g^
 nmap <C-e> <C-^>
 
 " nvim tree setup
-let g:nvim_tree_respect_buf_cwd = 1
-let g:nvim_tree_window_picker_exclude = {
-            \   'filetype': [
-                \     'notify',
-                \     'packer',
-                \     'qf'
-                \   ],
-                \   'buftype': [
-                    \     'terminal'
-                    \   ]
-                    \ }
-let g:nvim_tree_special_files = { 'README.md': 1, 'Makefile': 1, 'MAKEFILE': 1 } " List of filenames that gets highlighted with NvimTreeSpecialFile
-let g:nvim_tree_icons = {
-            \ 'default': '',
-            \ 'symlink': '',
-            \ 'git': {
-                \   'unstaged': "✗",
-                \   'staged': "✓",
-                \   'unmerged': "",
-                \   'renamed': "➜",
-                \   'untracked': "★",
-                \   'deleted': "",
-                \   'ignored': "◌"
-                \   },
-                \ 'folder': {
-                    \   'arrow_open': "",
-                    \   'arrow_closed': "",
-                    \   'default': "",
-                    \   'open': "",
-                    \   'empty': "",
-                    \   'empty_open': "",
-                    \   'symlink': "",
-                    \   'symlink_open': "",
-                    \   }
-                    \ }
+" let g:nvim_tree_respect_buf_cwd = 1
+" let g:nvim_tree_window_picker_exclude = {
+"             \   'filetype': [
+"                 \     'notify',
+"                 \     'packer',
+"                 \     'qf'
+"                 \   ],
+"                 \   'buftype': [
+"                     \     'terminal'
+"                     \   ]
+"                     \ }
+" let g:nvim_tree_special_files = { 'README.md': 1, 'Makefile': 1, 'MAKEFILE': 1 } " List of filenames that gets highlighted with NvimTreeSpecialFile
+" let g:nvim_tree_icons = {
+"             \ 'default': '',
+"             \ 'symlink': '',
+"             \ 'git': {
+"                 \   'unstaged': "✗",
+"                 \   'staged': "✓",
+"                 \   'unmerged': "",
+"                 \   'renamed': "➜",
+"                 \   'untracked': "★",
+"                 \   'deleted': "",
+"                 \   'ignored': "◌"
+"                 \   },
+"                 \ 'folder': {
+"                     \   'arrow_open': "",
+"                     \   'arrow_closed': "",
+"                     \   'default': "",
+"                     \   'open': "",
+"                     \   'empty': "",
+"                     \   'empty_open': "",
+"                     \   'symlink': "",
+"                     \   'symlink_open': "",
+"                     \   }
+"                     \ }
 
-nnoremap <C-n> :lua require('ceres.functions').tree.toggle(false)<CR>
-nnoremap <leader>r :NvimTreeRefresh<CR>
-nnoremap <leader>n :lua require('ceres.functions').tree.open(true)<CR>
+" nnoremap <C-n> :lua require('ceres.functions').tree.toggle(false)<CR>
+" nnoremap <leader>r :NvimTreeRefresh<CR>
+" nnoremap <leader>n :lua require('ceres.functions').tree.open(true)<CR>
 
 
 

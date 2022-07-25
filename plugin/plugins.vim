@@ -3,6 +3,7 @@ imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
 let g:copilot_no_tab_map = v:true
 imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
 
+
 " Black setup
 " nnoremap <leader>F :Black<CR>
 nnoremap <leader>F :lua require('ceres.functions').format()<CR>
@@ -18,6 +19,17 @@ nmap <leader>gSP :Git stash pop <CR>
 nmap <leader>gSp :Git stash push <CR>
 nnoremap <leader>ga :lua require('ceres.functions').commit()<CR>
 nnoremap <leader>gp :Git push<CR>
+
+" Workflow using fugitive
+" use gs to show status
+" use s, u to stage and unstage
+" use cc to commit
+" use dv to resolve conflicts in vertical split
+" use gf to grab left split
+" use gj to grab right split
+
+
+
 " Harpoon
 nnoremap <leader>hm :lua require("harpoon.mark").add_file()<CR>
 nnoremap <leader>hQ :lua require("harpoon.ui").toggle_quick_menu()<CR>

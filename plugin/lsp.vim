@@ -8,11 +8,12 @@ nnoremap gs :lua vim.lsp.buf.signature_help()<CR>
 nnoremap grn :lua vim.lsp.buf.rename()<CR>
 " nnoremap grr <cmd>TroubleToggle lsp_references<cr>
 nnoremap grr :lua vim.lsp.buf.references()<CR>
-nnoremap <leader>vca :lua vim.lsp.buf.code_action()<CR>
+nnoremap <leader>va :lua vim.lsp.buf.code_action()<CR>
 nnoremap <leader>vn :lua vim.diagnostic.goto_next()<CR>
 nnoremap <leader>vl :lua vim.diagnostic.setloclist({open  = false})<CR>
 noremap <leader>vq :lua vim.diagnostic.setqflist({open = false})<CR>
-nnoremap <leader>va <cmd>TroubleToggle<cr>
+nnoremap <leader><C-v> :lua require("ceres.functions").toggle_errors()<CR>
+" nnoremap <leader>va <cmd>TroubleToggle<cr>
 nnoremap <leader>vw <cmd>TroubleToggle workspace_diagnostics<cr>
 nnoremap <leader>vd <cmd>TroubleToggle document_diagnostics<cr>
 

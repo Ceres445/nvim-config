@@ -4,11 +4,25 @@ M.format  = function()
     if (vim.bo.filetype == 'python')
     then
         vim.cmd(':Black')
+    elseif (vim.bo.filetype == "javascript")
+    then
+        vim.cmd(":Prettier")
     else
         vim.cmd(':Autoformat')
     end
 end
 
+M.toggle_errors = function()
+    if (vim.g.errors_visible) then
+        vim.g.errors_visible = false
+        vim.diagnostic.config({ virtual_lines = false })
+        print("Disabled errors")
+    else
+        vim.g.errors_visible = true
+        vim.diagnostic.config({ virtual_lines = true })
+        print("Enabled errors")
+    end
+end
 
 
 M.load = function()

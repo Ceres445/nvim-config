@@ -6,6 +6,7 @@ local telescope = require("telescope")
 telescope.setup({
     defaults = {
         file_sorter = require("telescope.sorters").get_fzy_sorter,
+        file_ignore_patterns = { 'venv', 'node_modules', '__pycache__', 'target'},
         prompt_prefix = " >",
         color_devicons = true,
         file_previewer = require("telescope.previewers").vim_buffer_cat.new,
@@ -81,6 +82,10 @@ M.grep_dotfiles = function()
         cwd = vim.env.DOTFILES,
         hidden = true,
     })
+end
+
+M.find_files = function()
+    builtin.find_files()
 end
 
 return M

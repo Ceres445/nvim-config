@@ -7,6 +7,7 @@ set wildignore+=**/node_modules/*
 set wildignore+=**/android/*
 set wildignore+=**/ios/*
 set wildignore+=**/.git/*
+set wildignore+=**/target/*
 
 
 function! s:InstallVimPlug()
@@ -60,19 +61,22 @@ Plug 'ThePrimeagen/vim-be-good'
 Plug 'folke/which-key.nvim'
 Plug 'rmagatti/auto-session',
 Plug 'rmagatti/session-lens'
-Plug 'tpope/vim-dadbod'
-Plug 'kristijanhusak/vim-carbon-now-sh'
+" Plug 'tpope/vim-dadbod'
+" Plug 'kristijanhusak/vim-carbon-now-sh'
 " Plug 'tpope/vim-obsession'
 " Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
 " syntax highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-refactor'
-Plug 'ellisonleao/glow.nvim', {'branch': 'main'}
+" Plug 'ellisonleao/glow.nvim', {'branch': 'main'}
+" Plug 'ziontee113/syntax-tree-surfer'
 " Plug 'preservim/nerdtree'
 " Plug 'kyazdani42/nvim-tree.lua'
 Plug 'p00f/nvim-ts-rainbow'
-Plug 'chrisbra/Colorizer'
+Plug 'norcalli/nvim-colorizer.lua'
+
+" Plug 'chrisbra/Colorizer'
 " Plug 'luochen1990/rainbow'
 Plug 'folke/todo-comments.nvim'
 
@@ -88,28 +92,32 @@ Plug 'tpope/vim-commentary'
 
 " LSP
 Plug 'vim-python/python-syntax'
+Plug 'rust-lang/rust.vim'
 Plug 'neovim/nvim-lspconfig'
-Plug 'williamboman/nvim-lsp-installer',
+Plug 'williamboman/nvim-lsp-installer'
+" Plug 'fatih/vim-go'
+Plug 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
 
 " " Auto complete
-" Plug 'hrsh7th/cmp-nvim-lsp'
-" Plug 'hrsh7th/cmp-buffer'
-" Plug 'hrsh7th/cmp-path'
-" Plug 'hrsh7th/cmp-cmdline'
-" Plug 'hrsh7th/nvim-cmp'
-" Plug 'onsails/lspkind-nvim'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'onsails/lspkind-nvim'
 " Plug 'L3MON4D3/LuaSnip'
 " Plug 'saadparwaiz1/cmp_luasnip'
 
 "testing coq
-Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
-Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+" Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+" Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 
 " dev icons
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
+set termguicolors
 lua require('ceres')
 " " Load session
 " fun! Startup()
@@ -147,7 +155,6 @@ set noerrorbells
 set autowrite
 set mouse=a
 set cursorline
-set termguicolors
 set tabstop=4 softtabstop=2
 set shiftwidth=4
 set expandtab
