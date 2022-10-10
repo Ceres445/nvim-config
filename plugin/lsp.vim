@@ -12,6 +12,7 @@ nnoremap <leader>va :lua vim.lsp.buf.code_action()<CR>
 nnoremap <leader>vn :lua vim.diagnostic.goto_next()<CR>
 nnoremap <leader>vl :lua vim.diagnostic.setloclist({open  = false})<CR>
 noremap <leader>vq :lua vim.diagnostic.setqflist({open = false})<CR>
+" disable errors
 nnoremap <leader><C-v> :lua require("ceres.functions").toggle_errors()<CR>
 " nnoremap <leader>va <cmd>TroubleToggle<cr>
 nnoremap <leader>vw <cmd>TroubleToggle workspace_diagnostics<cr>

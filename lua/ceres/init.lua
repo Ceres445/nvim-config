@@ -2,7 +2,7 @@ require("ceres.lsp")
 require("ceres.visuals")
 require("ceres.telescope")
 require("ceres.treesitter")
-require("ceres.go")
+-- require("ceres.go")
 
 
 

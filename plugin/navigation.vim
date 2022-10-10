@@ -9,19 +9,26 @@ nnoremap <leader>J :lua require("trouble").previous({jump = true})<CR>
 nnoremap <C-q> <cmd>TroubleToggle quickfix<cr>
 nnoremap <leader>q <cmd>TroubleToggle loclist<cr>
 
-nnoremap <leader>bp :BufferPin<CR>
-nnoremap <leader>bb :BufferOrderByBufferNumber<CR>
-nnoremap <leader>bf :BufferPick<CR>
 
 nnoremap <Leader>+ :vertical resize +5<CR>
 nnoremap <Leader>- :vertical resize -5<CR>
 
 nnoremap <leader>L :blast<CR>
 nnoremap <leader>H :bfirst<CR>
-nnoremap <silent> <S-h> :BufferPrevious<CR>
-nnoremap <silent> <S-l> :BufferNext<CR>
 nnoremap <C-s> :bd<CR>
 nnoremap <leader>bd :bd<CR>
+
+
+" barbar maps
+" nnoremap <silent> <S-h> :BufferPrevious<CR>
+" nnoremap <silent> <S-l> :BufferNext<CR>
+" nnoremap <leader>bp :BufferPin<CR>
+" nnoremap <leader>bb :BufferOrderByBufferNumber<CR>
+" nnoremap <leader>bf :BufferPick<CR>
+
+" bufferline maps
+nnoremap <silent> <S-h> :BufferLineCyclePrev<CR>
+nnoremap <silent> <S-l> :BufferLineCycleNext<CR>
 
 " use E instead of ^ to move to start of line
 noremap ge g^

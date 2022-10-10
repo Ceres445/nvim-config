@@ -1,5 +1,5 @@
 ﻿let mapleader=" "
-set guifont=Monaco:h13
+" set guifont=Monaco:h13
 set wildignore+=*.pyc
 set wildignore+=*_build/*
 set wildignore+=**/coverage/*
@@ -37,7 +37,8 @@ Plug 'airblade/vim-gitgutter'
 
 
 " status bar
-Plug 'romgrk/barbar.nvim'
+" Plug 'romgrk/barbar.nvim'
+Plug 'akinsho/bufferline.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
@@ -52,6 +53,7 @@ Plug 'ThePrimeagen/harpoon'
 Plug 'nvim-telescope/telescope-file-browser.nvim'
 
 " VIM extras
+Plug 'dstein64/vim-startuptime'
 Plug 'ThePrimeagen/vim-apm'
 Plug 'AckslD/nvim-neoclip.lua'
 Plug 'akinsho/toggleterm.nvim'
@@ -66,16 +68,19 @@ Plug 'rmagatti/session-lens'
 " Plug 'tpope/vim-obsession'
 " Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
-" syntax highlighting
+" treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-refactor'
+Plug 'nvim-treesitter/nvim-treesitter-context'
+Plug 'p00f/nvim-ts-rainbow'
+Plug 'norcalli/nvim-colorizer.lua'
+" Plug 'folke/twilight.nvim'
+" Plug 'ThePrimeagen/refactoring.nvim'
+
 " Plug 'ellisonleao/glow.nvim', {'branch': 'main'}
 " Plug 'ziontee113/syntax-tree-surfer'
 " Plug 'preservim/nerdtree'
 " Plug 'kyazdani42/nvim-tree.lua'
-Plug 'p00f/nvim-ts-rainbow'
-Plug 'norcalli/nvim-colorizer.lua'
-
 " Plug 'chrisbra/Colorizer'
 " Plug 'luochen1990/rainbow'
 Plug 'folke/todo-comments.nvim'
@@ -105,8 +110,8 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'onsails/lspkind-nvim'
-" Plug 'L3MON4D3/LuaSnip'
-" Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
 
 "testing coq
 " Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}

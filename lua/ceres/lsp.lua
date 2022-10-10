@@ -8,3 +8,6 @@ vim.g.errors_visible = true
 -- Setup nvim-cmp.
 
 require("ceres.compe")
+
+
+require("treesitter-context").setup()
