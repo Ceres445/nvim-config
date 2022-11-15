@@ -1,12 +1,5 @@
-function! ShowColourSchemeName()
-    try
-        return g:colors_name
-    catch
-        return "default"
-    endtry
-endfunction
-
 let t:is_transparent = 0
+
 function! Toggle_transparent_background()
     if t:is_transparent == 0
         set background=dark
@@ -51,6 +44,13 @@ function! Toggle_colorscheme()
     highlight LineNrAbove guifg=#E5C07B
     highlight LineNrBelow guifg=#E5C07B
     highlight TSVariable guifg=#56B6C2
+    if t:is_transparent  == 1
+        let t:is_transparent = 0 
+        call Toggle_transparent_background()
+    else 
+        let t:is_transparent = 1
+        call Toggle_transparent_background()
+    endif
 endfunction
 
 nnoremap <C-c><C-c> :call Toggle_transparent_background()<CR>
@@ -71,3 +71,11 @@ call Toggle_colorscheme()
 " endfunc
 " for transparent background
 
+
+" function! ShowColourSchemeName()
+"     try
+"         return g:colors_name
+"     catch
+"         return "default"
+"     endtry
+" endfunction
