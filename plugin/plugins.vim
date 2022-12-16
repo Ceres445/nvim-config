@@ -42,7 +42,11 @@ let g:rainbow_active = 1
 " python syntax highlighting
 let g:python_highlight_all = 1
 let g:formatterpath = ['/usr/local/bin/black']
-let g:python3_host_prog="/usr/local/bin/python3"
+if has('unix')
+    let g:python3_host_prog="/home/linuxbrew/.linuxbrew/bin/python3"
+else
+    let g:python3_host_prog="/usr/local/bin/python3"
+endif
 
 " configure nvcode-color-schemes
 let g:nvcode_termcolors=256

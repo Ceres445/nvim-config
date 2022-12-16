@@ -102,6 +102,7 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
 " Plug 'fatih/vim-go'
 Plug 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
+Plug 'https://git.sr.ht/~p00f/cphelper.nvim'
 
 " " Auto complete
 Plug 'hrsh7th/cmp-nvim-lsp'
