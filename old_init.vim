@@ -96,10 +96,10 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 
 " LSP
-Plug 'vim-python/python-syntax'
-Plug 'rust-lang/rust.vim'
 Plug 'neovim/nvim-lspconfig'
-Plug 'williamboman/nvim-lsp-installer'
+" Plug 'williamboman/nvim-lsp-installer'
+Plug 'williamboman/mason.nvim'
+
 " Plug 'fatih/vim-go'
 Plug 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
 Plug 'https://git.sr.ht/~p00f/cphelper.nvim'

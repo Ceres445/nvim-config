@@ -1,5 +1,6 @@
-require("ceres.lsp")
+-- require("ceres.lsp")
 require("ceres.visuals")
+require("ceres.set")
 require("ceres.telescope")
 require("ceres.treesitter")
 -- require("ceres.go")
@@ -47,6 +48,6 @@ require("toggleterm").setup{
     },
 }
 
-require('todo-comments').setup()
+-- require('todo-comments').setup()
 require('which-key').setup()
 require( 'colorizer' ).setup()

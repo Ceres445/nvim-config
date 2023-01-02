@@ -74,43 +74,45 @@ cmp.setup.cmdline(':', {
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 capabilities.textDocument.completion.completionItem.snippetSupport = true
-local lsp_installer = require("nvim-lsp-installer")
 
-lsp_installer.settings({
-    ui = {
-        icons = {
-            server_installed = "✓",
-            server_pending = "➜",
-            server_uninstalled = "✗"
-        }
-    }
-})
-lsp_installer.on_server_ready(function(server)
-    local opts = {
-        capabilities = capabilities
-    }
-    if server.name == "gopls" then
-        opts.settings = {
-            gopls = {
-                analyses = {
-                    unusedparams = true,
-                },
-                staticcheck = true,
-            },
-            capabilities = capabilities,
-        }
-    elseif server.name == "sumneko_lua" then
-        opts.settings = {
-            Lua = {
-                diagnostics = {
-                    globals = { 'vim' }
-                }
-            },
-            capabilities = capabilities,
-        }
-    end
-    server:setup(opts)
-end)
+
+-- local lsp_installer = require("nvim-lsp-installer")
+
+-- lsp_installer.settings({
+--     ui = {
+--         icons = {
+--             server_installed = "✓",
+--             server_pending = "➜",
+--             server_uninstalled = "✗"
+--         }
+--     }
+-- })
+-- lsp_installer.on_server_ready(function(server)
+--     local opts = {
+--         capabilities = capabilities
+--     }
+--     if server.name == "gopls" then
+--         opts.settings = {
+--             gopls = {
+--                 analyses = {
+--                     unusedparams = true,
+--                 },
+--                 staticcheck = true,
+--             },
+--             capabilities = capabilities,
+--         }
+--     elseif server.name == "sumneko_lua" then
+--         opts.settings = {
+--             Lua = {
+--                 diagnostics = {
+--                     globals = { 'vim' }
+--                 }
+--             },
+--             capabilities = capabilities,
+--         }
+--     end
+--     server:setup(opts)
+-- end)
 
 
 
