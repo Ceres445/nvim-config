@@ -31,10 +31,8 @@ vim.opt.colorcolumn = '120'
 
 if os.getenv('DISTRO') == 'Arch' then
     vim.g.python3_host_prog = '/usr/bin/python'
-else if os.getenv('DISTRO') == 'Ubuntu' then
+elseif os.getenv('DISTRO') == 'Ubuntu' then
     vim.g.python3_host_prog = '/home/linuxbrew/.linuxbrew/bin/python3'
-else if os.getenv('DISTRO') == 'macos' then
+elseif os.getenv('DISTRO') == 'macos' then
     vim.g.python3_host_prog = '/usr/local/bin/python3'
-end
-end
 end
