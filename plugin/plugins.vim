@@ -57,3 +57,6 @@ if (has("termguicolors"))
     hi LineNr ctermbg=NONE guibg=NONE
 endif
 
+
+" Commentary 
+" autocmd Filetype svelte setlocal commentstring=<!--%s-->

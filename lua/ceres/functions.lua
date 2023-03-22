@@ -1,14 +1,19 @@
 local M = {}
 
-M.format  = function()
+M.format = function()
     if (vim.bo.filetype == 'python')
     then
         vim.cmd(':Black')
-    elseif (vim.bo.filetype == "javascript")
+    elseif (vim.bo.filetype == "javascript" or vim.bo.filetype == "typescript")
     then
         vim.cmd(":Prettier")
     else
-        vim.cmd(':Autoformat')
+        if vim.fn.exists(':Format') then
+            vim.cmd(':Format')
+            vim.cmd(":w")
+        end
+        -- vim.cmd(":!indent %")
+
     end
 end
 
@@ -60,18 +65,18 @@ end
 
 
 M.tree = {}
-M.tree.open = function (file_find)
-    require'bufferline.state'.set_offset(31, 'FileTree')
+M.tree.open = function(file_find)
+    require 'bufferline.state'.set_offset(31, 'FileTree')
     if file_find then
-        require'nvim-tree'.find_file(true)
+        require 'nvim-tree'.find_file(true)
     else
-        require'nvim-tree'.open()
+        require 'nvim-tree'.open()
     end
 end
 
-M.tree.close = function ()
-    require'bufferline.state'.set_offset(0)
-    require'nvim-tree'.close()
+M.tree.close = function()
+    require 'bufferline.state'.set_offset(0)
+    require 'nvim-tree'.close()
 end
 
 M.tree.toggle = function(file_find)

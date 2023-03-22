@@ -1,9 +1,8 @@
-require'nvim-treesitter.configs'.setup {
-    ensure_installed ={"go","python",  "javascript", "lua", "vim" },
+require 'nvim-treesitter.configs'.setup {
+    ensure_installed = { "go", "python", "javascript", "lua", "vim", "rust", "typescript", "cpp", "help" },
     sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
-    ignore_install = { "javascript" }, -- List of parsers to ignore installing
     highlight = {
-        enable = true,              -- false will disable the whole extension
+        enable = true, -- false will disable the whole extension
         -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
         -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
         -- Using this option may slow down your editor, and you may see some duplicate highlights.
@@ -28,9 +27,7 @@ require'nvim-treesitter.configs'.setup {
     },
     incremental_selection = { enable = true },
     textobjects = { enable = true },
-    indent = { enable = true ,
-        disable = { "python"}
-    },
+    indent = { enable = true },
     refactor = {
         highlight_definitions = { enable = true },
         highlight_current_scope = { enable = true },
@@ -38,7 +35,7 @@ require'nvim-treesitter.configs'.setup {
     smart_rename = {
         enable = true,
         keymaps = {
-            smart_rename = "grr",
+            smart_rename = "grN",
         },
     },
 }

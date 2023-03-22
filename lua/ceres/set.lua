@@ -17,6 +17,8 @@ vim.opt.undofile = true
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 vim.opt.termguicolors = true
 
@@ -27,6 +29,9 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = '120'
+
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 
 if os.getenv('DISTRO') == 'Arch' then
