@@ -11,6 +11,7 @@ nnoremap <leader>gb :lua require('ceres.telescope').git_branches()<CR>
 nnoremap <leader>gc :lua require('ceres.telescope').git_branches()<CR>
 nnoremap <leader>vrc :lua require('ceres.telescope').search_dotfiles()<CR>
 nnoremap <leader>vrf :lua require('ceres.telescope').grep_dotfiles()<CR>
+nnoremap <leader>nrf :lua require('ceres.telescope').grep_config()<CR>
 nnoremap <leader>wb :lua require('telescope').extensions.git_worktree.git_worktrees()<CR>
 nnoremap <leader>wc :lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>
 nnoremap <leader>fb :lua require('telescope').extensions.file_browser.file_browser()<CR>

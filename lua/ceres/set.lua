@@ -15,7 +15,15 @@ vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
+
+vim.api.nvim_create_autocmd('BufEnter',{
+    command = "setlocal formatoptions-=c formatoptions-=r formatoptions-=o"
+})
+-- vim.opt.formatoptions = "jcql"
+
+
 vim.opt.hlsearch = false
+
 vim.opt.incsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
@@ -32,6 +40,8 @@ vim.opt.colorcolumn = '120'
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+
+vim.opt.splitright = true
 
 
 if os.getenv('DISTRO') == 'Arch' then

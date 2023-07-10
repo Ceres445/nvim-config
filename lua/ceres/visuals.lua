@@ -86,7 +86,7 @@ require("bufferline").setup{
     }}
 
 require('lualine').setup{
-    sections = {lualine_c = {require('auto-session-library').current_session_name, 'filename'}}
+	sections = {lualine_c = {require('auto-session.lib').current_session_name}}
 }
 
 -- require'nvim-tree'.setup {

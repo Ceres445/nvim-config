@@ -7,7 +7,6 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 require('mason').setup()
 
 local servers = {
-    clangd = {},
     pyright = {},
     rust_analyzer = {},
     tsserver = {},
@@ -19,6 +18,10 @@ local servers = {
             telemetry = { enable = false },
         },
     },
+    clangd = {
+        UseTab = 'Always',
+    }
+
 }
 
 local on_attach = function(_, bufnr)

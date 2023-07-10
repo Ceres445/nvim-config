@@ -6,6 +6,11 @@ autocmd filetype cpp nnoremap <C-C> :s/^\(\s*\)/\1\/\/<CR> :s/^\(\s*\)\/\/\/\//\
 
 autocmd filetype cpp nnoremap <leader>M :read ~/.config/nvim/plugin/template.cpp<CR>81Gi
 
+
+autocmd filetype c nnoremap <leader>R :call CompileAndRun() <CR>
+autocmd filetype c nnoremap <C-w><C-o> :call CloseIOBuffers() <CR>
+autocmd filetype c nnoremap <leader>o :call IOBufferSetup() <CR>
+
 let s:opened = 0
 " setup input/output buffers on the right side for python,cpp,c
 func! IOBufferSetup()
@@ -14,6 +19,7 @@ func! IOBufferSetup()
 	let s:workingWindow=winnr()
 	let s:workingFileName=@%
 	let s:workingFileType=&filetype
+
 
 	vsplit input.file
 	execute(":w")
