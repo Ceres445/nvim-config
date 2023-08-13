@@ -16,7 +16,7 @@ vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
 
-vim.api.nvim_create_autocmd('BufEnter',{
+vim.api.nvim_create_autocmd('BufEnter', {
     command = "setlocal formatoptions-=c formatoptions-=r formatoptions-=o"
 })
 -- vim.opt.formatoptions = "jcql"
@@ -45,7 +45,7 @@ vim.opt.splitright = true
 
 
 if os.getenv('DISTRO') == 'Arch' then
-    vim.g.python3_host_prog = '/usr/bin/python'
+    vim.g.python3_host_prog = os.getenv('PYENV_ROOT') .. '/shims/python3'
 elseif os.getenv('DISTRO') == 'Ubuntu' then
     vim.g.python3_host_prog = '/home/linuxbrew/.linuxbrew/bin/python3'
 elseif os.getenv('DISTRO') == 'macos' then
