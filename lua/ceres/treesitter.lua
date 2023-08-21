@@ -1,5 +1,5 @@
 require 'nvim-treesitter.configs'.setup {
-    ensure_installed = { "go", "python", "javascript", "lua", "vim", "rust", "typescript", "cpp", "help" },
+    ensure_installed = { "python", "javascript", "lua", "vim", "rust", "typescript", "cpp" },
     sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
     highlight = {
         enable = true, -- false will disable the whole extension
