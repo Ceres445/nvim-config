@@ -1,11 +1,28 @@
+local overrides = require("custom.configs.overrides")
 local plugins = {
 	{
-		"folke/tokyonight.nvim",
+		"tpope/vim-fugitive",
 		lazy = false,
-		config = function()
-			vim.cmd("colorscheme tokyonight")
-		end,
 	},
+	{
+		"zbirenbaum/copilot.lua",
+		-- Lazy load when event occurs. Events are triggered
+		-- as mentioned in:
+		-- https://vi.stackexchange.com/a/4495/20389
+		event = "InsertEnter",
+
+		-- You can also have it load at immediately at
+		-- startup by commenting above and uncommenting below:
+		-- lazy = false
+		opts = overrides.copilot,
+	},
+	-- {
+	-- 	"folke/tokyonight.nvim",
+	-- 	lazy = false,
+	-- 	config = function()
+	-- 		vim.cmd("colorscheme tokyonight")
+	-- 	end,
+	-- },
 	{
 		"nvim-treesitter/nvim-treesitter",
 		opts = {
@@ -48,6 +65,19 @@ local plugins = {
 
 		lazy = false,
 	},
+	-- {
+	-- 	"nvim-lualine/lualine.nvim",
+	-- 	lazy = false,
+	-- 	-- config = require("lualine").setup(),
+	-- },
+	{
+		"jay-babu/mason-nvim-dap.nvim",
+		lazy =false,
+		dependencies = "mfussenegger/nvim-dap",
+		config = function()
+			require("mason-nvim-dap").setup()
+		end,
+	},
 	{
 		"rcarriga/nvim-dap-ui",
 		event = "VeryLazy",
@@ -70,9 +100,31 @@ local plugins = {
 	{
 		"mfussenegger/nvim-dap",
 		config = function()
+			---@diagnostic disable-next-line: different-requires
 			require("custom.configs.dap")
 			require("core.utils").load_mappings("dap")
 		end,
+	},
+	{
+		"hrsh7th/nvim-cmp",
+		dependencies = {
+			{
+				"zbirenbaum/copilot-cmp",
+				config = function()
+					require("copilot_cmp").setup()
+				end,
+			},
+		},
+		opts = {
+			sources = {
+				{ name = "nvim_lsp" },
+				{ name = "luasnip" },
+				{ name = "buffer" },
+				{ name = "nvim_lua" },
+				{ name = "path" },
+				{ name = "copilot" },
+			},
+		},
 	},
 	-- {
 	--   "jose-elias-alvarez/null-ls.nvim",
@@ -106,6 +158,7 @@ local plugins = {
 				"stylua",
 				"black",
 				"pyright",
+				"clangd",
 			},
 		},
 	},
@@ -117,4 +170,5 @@ local plugins = {
 		end,
 	},
 }
+
 return plugins

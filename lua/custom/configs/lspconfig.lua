@@ -33,3 +33,13 @@ lspconfig.pyright.setup({
 	capabilities = capabilities,
 	filetypes = { "python" },
 })
+
+lspconfig.clangd.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+lspconfig.jdtls.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})

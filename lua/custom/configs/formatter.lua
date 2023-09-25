@@ -12,6 +12,16 @@ local M = {
 		python = {
 			require("formatter.filetypes.python").black,
 		},
+		c = {
+			require("formatter.filetypes.c").clang_format,
+		},
+		cpp = {
+			require("formatter.filetypes.cpp").clang_format,
+		},
+		java = {
+			require("formatter.filetypes.java").google_java_format,
+		},
+
 		["*"] = {
 			require("formatter.filetypes.any").remove_trailing_whitespace,
 		},

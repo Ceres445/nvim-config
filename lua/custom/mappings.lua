@@ -1,6 +1,12 @@
 local M = {}
 M.general = {
-	i = { ["jj"] = { "<ESC>", "escape insert mode", opts = { nowait = true } } },
+	i = {
+		["jj"] = { "<ESC>", "escape insert mode", opts = { nowait = true } },
+		-- ["<C-j>"] = { 'copilot#Accept("<CR>")', opts = { silent = true, expr = true } },
+	},
+	n = {
+		["<leader>v"] = { "ggVG", "select all text" },
+	},
 }
 
 M.dap = {
@@ -14,6 +20,16 @@ M.dap = {
 			"<cmd> DapContinue <CR>",
 			"Run or continue the debugger",
 		},
+	},
+}
+
+M.fugitive = {
+	n = {
+		["<leader>gs"] = { "<cmd> Git <CR>", "Git status" },
+		["<leader>gc"] = { "<cmd> Git commit <CR>", "Git commit" },
+		["<leader>gp"] = { "<cmd> Git push <CR>", "Git push" },
+		["<leader>gf"] = { "<cmd> diffget //2 <CR>", "Get left side change" },
+		["<leader>gj"] = { "<cmd> diffget //3 <CR>", "Get right side change" },
 	},
 }
 M.bufferline = {
@@ -31,7 +47,7 @@ M.bufferline = {
 			"Goto prev buffer",
 		},
 
-		["<C-w>"] = {
+		["<C-s>"] = {
 			function()
 				require("nvchad.tabufline").close_buffer()
 			end,
@@ -66,6 +82,12 @@ M.colorscheme = {
 				vim.o.background = "dark"
 			end,
 		},
+	},
+}
+
+M.telescope = {
+	n = {
+		["gr"] = { "<cmd> Telescope lsp_references <CR>", "LSP Reference" },
 	},
 }
 
