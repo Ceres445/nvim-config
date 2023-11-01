@@ -1,5 +1,8 @@
 local M = {
 	filetype = {
+		rust = {
+			require("formatter.filetypes.rust").rustfmt,
+		},
 		javascript = {
 			require("formatter.filetypes.javascript").prettier,
 		},

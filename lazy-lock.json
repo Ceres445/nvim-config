@@ -29,6 +29,7 @@
   "nvim-web-devicons": { "branch": "master", "commit": "ecdeb4e2a4af34fc873bbfbf1f4c4e447e632255" },
   "nvterm": { "branch": "main", "commit": "3e43be1d0ca60cc5e2dfc2d289b06577e7e57e98" },
   "plenary.nvim": { "branch": "master", "commit": "0232372b906f275f76ac42029eba25eaf95e76b9" },
+  "rainbow-delimiters.nvim": { "branch": "master", "commit": "df8cdf68234fbf056202a9684931c3dfa89988c1" },
   "telescope.nvim": { "branch": "master", "commit": "a19770625aed49ad2a9f591a5e3946707f7359f6" },
   "ui": { "branch": "v2.0", "commit": "0d3196bff35279798455893204ad8057e2ba7e09" },
   "vim-fugitive": { "branch": "master", "commit": "6fcb0ad03982de646e3fecb6915e585651b9a9fb" },

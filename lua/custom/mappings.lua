@@ -7,6 +7,10 @@ M.general = {
 	n = {
 		["<leader>v"] = { "ggVG", "select all text" },
 	},
+	v = {
+		["<"] = { "<gv", "indent left" },
+		[">"] = { ">gv", "indent right" },
+	},
 }
 
 M.dap = {
