@@ -72,25 +72,36 @@ local plugins = {
 		end,
 		lazy = false,
 	},
+	-- Lua
 	{
-
-		"rmagatti/auto-session",
-
+		"olimorris/persisted.nvim",
+		lazy = false,
 		config = function()
-			require("auto-session").setup({
-				log_level = "info",
-				auto_session_enable_last_session = true,
-				auto_session_enabled = true,
-				auto_save_enabled = true,
-				auto_restore_enabled = true,
-				auto_session_suppress_dirs = nil,
-				pre_save_cmds = { "tabdo NvimTreeClose" },
+			require("persisted").setup({
+				autoload = true,
 			})
 		end,
-		dependencies = "nvim-tree/nvim-tree.lua",
-
-		lazy = false,
 	},
+	-- {
+	--
+	-- 	"rmagatti/auto-session",
+	--
+	-- 	config = function()
+	-- 		require("auto-session").setup({
+	-- 			log_level = "info",
+	-- 			auto_session_enable_last_session = true,
+	-- 			auto_session_enabled = true,
+	-- 			auto_save_enabled = true,
+	-- 			auto_restore_enabled = true,
+	-- 			auto_session_suppress_dirs = nil,
+	-- 			pre_save_cmds = { "tabdo NvimTreeClose" },
+	-- 		})
+	-- 	end,
+	-- 	dependencies = "nvim-tree/nvim-tree.lua",
+	--
+	-- 	lazy = false,
+	-- },
+	--
 	-- {
 	-- 	"nvim-lualine/lualine.nvim",
 	-- 	lazy = false,
@@ -195,6 +206,10 @@ local plugins = {
 			require("plugins.configs.lspconfig")
 			require("custom.configs.lspconfig")
 		end,
+	},
+	{
+		"tpope/vim-surround",
+		lazy = false,
 	},
 }
 

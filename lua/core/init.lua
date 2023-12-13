@@ -72,6 +72,16 @@ autocmd("FileType", {
 	end,
 })
 
+-- Removes annoying line break on comment insert
+autocmd("FileType", {
+	pattern = "*",
+	callback = function()
+		vim.opt_local.formatoptions:remove("c")
+		vim.opt_local.formatoptions:remove("r")
+		vim.opt_local.formatoptions:remove("o")
+	end,
+})
+
 -- reload some chadrc options on-save
 autocmd("BufWritePost", {
 	pattern = vim.tbl_map(function(path)
