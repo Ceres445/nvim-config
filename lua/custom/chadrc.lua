@@ -2,7 +2,7 @@
 local M = {}
 
 M.ui = {
-	theme = "tokyonight",
+	theme = "catppuccin",
 	statusline = {
 		---@diagnostic disable-next-line: assign-type-mismatch
 		separator_style = "arrow",
