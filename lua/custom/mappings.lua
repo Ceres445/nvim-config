@@ -86,6 +86,12 @@ M.colorscheme = {
 				vim.o.background = "dark"
 			end,
 		},
+		["<leader>tt"] = {
+			function()
+				require("base46").toggle_transparency()
+			end,
+			"Toggle transparency in colorscheme",
+		},
 	},
 }
 
