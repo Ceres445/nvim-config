@@ -1,9 +1,7 @@
-require('ceres.packer')
-require("ceres.visuals")
-require("ceres.set")
+require("ceres.mini")
 require("ceres.telescope")
-require("ceres.treesitter")
-require("ceres.lsp")
+-- require("ceres.treesitter")
+-- require("ceres.lsp")
 -- require("ceres.go")
 
 

@@ -1,53 +1,18 @@
-vim.opt.nu = true
-vim.opt.relativenumber = true
+local fn = vim.fn
+local o = vim.opt
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+vim.cmd([[colo habamax]])
 
-vim.opt.smartindent = true
-
-vim.opt.wrap = false
-
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.undofile = true
-
-
-vim.api.nvim_create_autocmd('BufEnter', {
-    command = "setlocal formatoptions-=c formatoptions-=r formatoptions-=o"
-})
--- vim.opt.formatoptions = "jcql"
-
-
-vim.opt.hlsearch = false
-
-vim.opt.incsearch = true
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-
-vim.opt.termguicolors = true
-
-vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
-vim.opt.isfname:append("@-@")
-
-vim.opt.updatetime = 50
-
-vim.opt.colorcolumn = '120'
-
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-
-vim.opt.splitright = true
-
-
-if os.getenv('DISTRO') == 'Arch' then
-    vim.g.python3_host_prog = os.getenv('PYENV_ROOT') .. '/shims/python3'
-elseif os.getenv('DISTRO') == 'Ubuntu' then
-    vim.g.python3_host_prog = '/home/linuxbrew/.linuxbrew/bin/python3'
-elseif os.getenv('DISTRO') == 'macos' then
-    vim.g.python3_host_prog = '/usr/local/bin/python3'
-end
+o.completeopt = { "menu", "menuone", "noselect", "noinsert" } -- A comma separated list of options for Insert mode completion
+o.number = true -- show line numbers (or only the current one)
+o.relativenumber = true -- line numbers
+o.shiftwidth = 4
+o.smartcase = true -- smart case
+o.smartindent = true -- make indenting smarter again
+o.swapfile = false -- enable/disable swap file creation
+o.tabstop = 4 -- how many columns a tab counts for
+o.termguicolors = true -- set term gui colors (most terminals support this)
+o.undodir = fn.stdpath("data") .. "/undodir" -- set undo directory
+o.undofile = true -- enable/disable undo file creation
+o.wildignorecase = true -- When set case is ignored when completing file names and directories
+o.wildmode = "full"
