@@ -13,18 +13,27 @@ M.general = {
 	},
 }
 
-M.dap = {
-	plugin = true,
-	n = {
-		["<leader>db"] = {
-			"<cmd> DapToggleBreakpoint <CR>",
-			"Add breakpoint at line",
-		},
-		["<leader>dr"] = {
-			"<cmd> DapContinue <CR>",
-			"Run or continue the debugger",
-		},
-	},
+-- M.dap = {
+-- 	plugin = true,
+-- 	n = {
+-- 		["<leader>db"] = {
+-- 			"<cmd> DapToggleBreakpoint <CR>",
+-- 			"Add breakpoint at line",
+-- 		},
+-- 		["<leader>dr"] = {
+-- 			"<cmd> DapContinue <CR>",
+-- 			"Run or continue the debugger",
+-- 		},
+-- 	},
+-- }
+
+M.git_worktree = {
+ n = {
+    ["<leader>wb"] = {
+      function()
+          require('telescope').extensions.git_worktree.git_worktrees()
+      end}
+  }
 }
 
 M.fugitive = {

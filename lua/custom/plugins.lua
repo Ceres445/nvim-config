@@ -1,6 +1,13 @@
 local overrides = require("custom.configs.overrides")
 local plugins = {
 	{
+		"ThePrimeagen/git-worktree.nvim",
+		lazy = false,
+		config = function()
+			require("telescope").load_extension("git_worktree")
+		end,
+	},
+	{
 		"tpope/vim-fugitive",
 		lazy = false,
 	},
@@ -107,41 +114,41 @@ local plugins = {
 	-- 	lazy = false,
 	-- 	-- config = require("lualine").setup(),
 	-- },
-	{
-		"jay-babu/mason-nvim-dap.nvim",
-		lazy = false,
-		dependencies = "mfussenegger/nvim-dap",
-		config = function()
-			require("mason-nvim-dap").setup()
-		end,
-	},
-	{
-		"rcarriga/nvim-dap-ui",
-		event = "VeryLazy",
-		dependencies = "mfussenegger/nvim-dap",
-		config = function()
-			local dap = require("dap")
-			local dapui = require("dapui")
-			require("dapui").setup()
-			dap.listeners.after.event_initialized["dapui_config"] = function()
-				dapui.open()
-			end
-			dap.listeners.before.event_terminated["dapui_config"] = function()
-				dapui.close()
-			end
-			dap.listeners.before.event_exited["dapui_config"] = function()
-				dapui.close()
-			end
-		end,
-	},
-	{
-		"mfussenegger/nvim-dap",
-		config = function()
-			---@diagnostic disable-next-line: different-requires
-			require("custom.configs.dap")
-			require("core.utils").load_mappings("dap")
-		end,
-	},
+	-- {
+	-- 	"jay-babu/mason-nvim-dap.nvim",
+	-- 	lazy = false,
+	-- 	dependencies = "mfussenegger/nvim-dap",
+	-- 	config = function()
+	-- 		require("mason-nvim-dap").setup()
+	-- 	end,
+	-- },
+	-- {
+	-- 	"rcarriga/nvim-dap-ui",
+	-- 	event = "VeryLazy",
+	-- 	dependencies = "mfussenegger/nvim-dap",
+	-- 	config = function()
+	-- 		local dap = require("dap")
+	-- 		local dapui = require("dapui")
+	-- 		require("dapui").setup()
+	-- 		dap.listeners.after.event_initialized["dapui_config"] = function()
+	-- 			dapui.open()
+	-- 		end
+	-- 		dap.listeners.before.event_terminated["dapui_config"] = function()
+	-- 			dapui.close()
+	-- 		end
+	-- 		dap.listeners.before.event_exited["dapui_config"] = function()
+	-- 			dapui.close()
+	-- 		end
+	-- 	end,
+	-- },
+	-- {
+	-- 	"mfussenegger/nvim-dap",
+	-- 	config = function()
+	-- 		---@diagnostic disable-next-line: different-requires
+	-- 		require("custom.configs.dap")
+	-- 		require("core.utils").load_mappings("dap")
+	-- 	end,
+	-- },
 	{
 		"hrsh7th/nvim-cmp",
 		dependencies = {
@@ -189,7 +196,6 @@ local plugins = {
 		opts = {
 			ensure_installed = {
 				"eslint-lsp",
-				"js-debug-adapter",
 				"prettier",
 				"typescript-language-server",
 				"stylua",
