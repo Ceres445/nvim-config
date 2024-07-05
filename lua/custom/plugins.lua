@@ -4,7 +4,8 @@ local plugins = {
 		"ThePrimeagen/git-worktree.nvim",
 		lazy = false,
 		config = function()
-			require("telescope").load_extension("git_worktree")
+			-- require("telescope").load_extension("git_worktree")
+			require("telescope").load_extension("persisted")
 		end,
 	},
 	{
@@ -36,6 +37,7 @@ local plugins = {
 			ensure_installed = {
 				-- defaults
 				"vim",
+				"vimdoc",
 				"lua",
 				"python",
 
@@ -82,11 +84,19 @@ local plugins = {
 	-- Lua
 	{
 		"olimorris/persisted.nvim",
-		lazy = false,
+		lazy = false, -- make sure the plugin is always loaded at startup
 		config = function()
 			require("persisted").setup({
 				autoload = true,
 			})
+		end,
+	},
+	{
+		"echasnovski/mini.nvim",
+		version = "*",
+		lazy = false,
+		config = function()
+			require("custom.configs.mini")
 		end,
 	},
 	-- {

@@ -28,12 +28,13 @@ M.general = {
 -- }
 
 M.git_worktree = {
- n = {
-    ["<leader>wb"] = {
-      function()
-          require('telescope').extensions.git_worktree.git_worktrees()
-      end}
-  }
+	n = {
+		["<leader>wb"] = {
+			function()
+				require("telescope").extensions.git_worktree.git_worktrees()
+			end,
+		},
+	},
 }
 
 M.fugitive = {
@@ -107,6 +108,21 @@ M.colorscheme = {
 M.telescope = {
 	n = {
 		["gr"] = { "<cmd> Telescope lsp_references <CR>", "LSP Reference" },
+	},
+}
+
+M.mini = {
+	n = {
+		["<leader>mm"] = {
+			function()
+				require("mini.visits").add_label()
+			end,
+		},
+		["<leader>mv"] = {
+			function()
+				require("mini.visits").list_labels()
+			end,
+		},
 	},
 }
 
