@@ -24,6 +24,12 @@ local M = {
 		java = {
 			require("formatter.filetypes.java").google_java_format,
 		},
+		json = {
+			require("formatter.filetypes.json").prettier,
+		},
+		-- verilog = {
+		-- 	require("formatter.filetypes.verilog").verible,
+		-- },
 
 		["*"] = {
 			require("formatter.filetypes.any").remove_trailing_whitespace,

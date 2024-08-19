@@ -4,12 +4,12 @@ local M = {}
 -- TODO: Fix clipboard: https://github.com/NvChad/NvChad/discussions/1238
 
 M.ui = {
-	theme = "tokyodark",
+	theme = "catppuccin",
 	statusline = {
 		---@diagnostic disable-next-line: assign-type-mismatch
 		separator_style = "arrow",
 	},
-	theme_toggle = { "tokyodark", "tokyodark" },
+	theme_toggle = { "tokyonight", "catppuccin" },
 	transparency = true,
 }
 M.mappings = require("custom.mappings")
