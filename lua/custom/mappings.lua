@@ -2,6 +2,7 @@ local M = {}
 M.general = {
 	i = {
 		["jj"] = { "<ESC>", "escape insert mode", opts = { nowait = true } },
+		["jk"] = { "<ESC>", "escape insert mode alt", opts = { nowait = true } },
 		-- ["<C-j>"] = { 'copilot#Accept("<CR>")', opts = { silent = true, expr = true } },
 	},
 	n = {
