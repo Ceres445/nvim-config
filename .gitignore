@@ -1,4 +1,5 @@
 plugged/
 Session.vim
 packer_compiled.lua
+lazy-lock.json
 
