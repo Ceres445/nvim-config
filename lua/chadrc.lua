@@ -19,5 +19,8 @@ M.base46 = {
 	-- 	["@comment"] = { italic = true },
 	-- },
 }
+M.mason.pkgs = {
+  "black", "clangd", "clang-format", "pyright", "prettier"
+}
 
 return M
