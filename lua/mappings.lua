@@ -21,8 +21,8 @@ end, { desc = "General close buffer" })
 
 -- Git
 map("n", "<leader>gs", "<cmd> Git <CR>", { desc = "Git status" })
-map("n", "<leader>gp", "Git push <CR>", { desc = "Git push" })
-map("n", "<leader>gc", "Git commit <CR>", { desc = "Git commit" })
+map("n", "<leader>gp", "<cmd>Git push <CR>", { desc = "Git push" })
+map("n", "<leader>gc", "<cmd>Git commit <CR>", { desc = "Git commit" })
 map("n", "<leader>gj", "diffget //3 <CR>", { desc = "Get right side change" })
 map("n", "<leader>gf", "diffget //2 <CR>", { desc = "Get left side change" })
 
