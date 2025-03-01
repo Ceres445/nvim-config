@@ -33,5 +33,18 @@ map("t", "<C-t>", function()
     require("nvchad.term").toggle { pos = "float", id = "floatTerm", float_opts = { border = "double" } }
 end, { desc = "Toggle floating term" })
 
+map("n", "<leader>tt", function()
+ require("base46").toggle_transparency()
+end)
+
+
+map("n", "<leader>rh", function()
+ require('gitsigns').reset_hunk()
+end, { desc = "Git reset hunk"})
+
+map("n", "<leader>rp", function()
+ require('gitsigns').preview_hunk()
+end, { desc = "Git preview hunk"})
+
 -- map({ "n", "i", "v" }, "<C-st commit
 -- >", "<cmd> w <cr>")
