@@ -45,5 +45,26 @@ map("n", "<leader>rp", function()
     require("gitsigns").preview_hunk()
 end, { desc = "Git preview hunk" })
 
+map("n", "<leader>a", function()
+    -- select all lines using ggVG
+    vim.cmd "normal! ggVG"
+end, { desc = "Select entire file" })
+
+map("n", "<leader>dd", function()
+    vim.cmd 'normal! "_dd'
+end, { desc = "Delete into empty register" })
+
+map("v", "<leader>d", function()
+    vim.cmd 'normal! "_d'
+end, { desc = "Delete into empty register" })
+
+
+-- TODO: Add this
+-- map("v", "<leader>c", function()
+--     vim.cmd '"_c'
+-- end, { desc = "Change into empty register" })
+
+map("n", "x", '"_x', { desc = "Delete into blackhole register" })
+
 -- map({ "n", "i", "v" }, "<C-st commit
 -- >", "<cmd> w <cr>")

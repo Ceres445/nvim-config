@@ -12,7 +12,11 @@
 -- }
 require("mini.visits").setup()
 require("mini.fuzzy").setup()
-require("mini.surround").setup()
+
+
+require("mini.surround").setup {
+    search_method = "cover_or_next",
+}
 require("mini.jump").setup {
     delay = {
         highlight = 100,
